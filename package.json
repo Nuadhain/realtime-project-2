@@ -1,0 +1,37 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "scripts": {
+    "build": "babel ./client --out-file ./hosted/bundle.js",
+    "watch": "babel --watch ./client --out-file ./hosted/bundle.js",
+    "nodemon": "nodemon --watch ./src ./src/server.js",
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests complete\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SomeJerk/realtime-project-2"
+  },
+  "author": "Jason Noone",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/SomeJerk/realtime-project-2"
+  },
+  "homepage": "https://github.com/SomeJerk/realtime-project-2",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.0.4",
+    "xxhashjs": "^0.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "nodemon": "^1.17.2"
+  }
+}

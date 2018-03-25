@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: sans-serif;
+            color: #474136;
+            background: white;
+        }
+        
+        #everything {
+            margin: 0 auto;
+        }
+        
+        #titleDiv {
+            margin: 0 auto;
+        }
+        
+        #canvasDiv {
+            margin: 0 auto;
+        }
+        
+        #hidden {
+            display: none;
+        }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="/assets/bundle.js" ></script>
+</head>
+<body>
+    <div id="everything">
+        <div id="titleDiv">
+            <img id="title" src="/assets/MultiplayerTitleCard.png" alt="Shinkicker Multiplayer" />
+        </div>
+        <div id="canvasDiv">
+            <canvas id="cav" height="580" width="750" style="border: 5px solid black"></canvas>
+        </div>
+        <div id="hidden">
+            <img id="shinkicker" src="/assets/shinkickerwalk.png" alt="shinkicker spritesheet" />
+            <img id="kicked" src="/assets/kicked.png" alt="kicked player" />
+        </div>
+    </div>
+</body>
+</html>
