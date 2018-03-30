@@ -19,10 +19,6 @@ const keyDownHandler = (e) => {
     else if(keyPressed === 39 && !character.kicked) {
         character.moveRight = true;
     }
-    
-    if(keyPressed === 32 && !character.kicked) {
-        character.jump = true;
-    }
 };
 
 const keyUpHandler = (e) => {
@@ -37,12 +33,16 @@ const keyUpHandler = (e) => {
     }
     
     if(keyPressed === 32 && !character.kicked) {
-        character.jump = false;
+        character.jump = true;
     }
     
     if(keyPressed === 88 && !character.kicked) {
         sendKick();
     }
+};
+
+const isWorking = (data) => {
+    console.log(data);
 };
 
 const init = () => {
@@ -59,6 +59,7 @@ const init = () => {
     socket.on('kickHit', playerDeath);
     socket.on('updateKick', receiveKick);
     socket.on('left', removeUser);
+    socket.on('fuck', isWorking);
     
     document.body.addEventListener('keydown', keyDownHandler);
     document.body.addEventListener('keyup', keyUpHandler);

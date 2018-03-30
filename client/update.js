@@ -33,6 +33,7 @@ const removeUser = (data) => {
 const setUser = (data) => {
     hash = data.hash;
     characters[hash] = data;
+    console.log(characters[hash].hash + " has connected to " + characters[hash].room);
     requestAnimationFrame(redraw);
 };
 
@@ -76,11 +77,12 @@ const updatePosition = () => {
     if(character.moveRight && character.destX < canvas.width) {
         character.destX += 3;
     }
-    if(character.jump && character.destY > 0 && (character.y === 580 - character.height)) {
-        character.destY -= 20;
+    if(character.jump && character.destY > 0 && (character.destY >= 580 - character.height)) {
+        character.destY -= 200;
+        character.jump = false;
     }
     if(character.destY < 580 - character.height) {
-        character.destY += 2;
+        character.destY += 5;
     }
     
     if(character.moveLeft) {

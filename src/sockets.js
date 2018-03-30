@@ -63,6 +63,7 @@ const setupSockets = (ioServer) => {
       physics.send(new Message('charList', charList));
 
       io.sockets.in('room1').emit('updatedMovement', charList[socket.hash]);
+      io.sockets.in('room1').emit('fuck', `${hash} is moving`);
     });
 
     socket.on('kick', (data) => {

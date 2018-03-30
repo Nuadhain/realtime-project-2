@@ -15,7 +15,7 @@ const lerp = (v0, v1, alpha) => {
 const redraw = (time) => {
     updatePosition();
     
-    ctx.clearRect(0, 0, 750, 580);
+    ctx.clearRect(0, 0, 1000, 580);
     
     const keys = Object.keys(characters);
     

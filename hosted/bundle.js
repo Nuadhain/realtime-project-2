@@ -17,7 +17,7 @@ var lerp = function lerp(v0, v1, alpha) {
 var redraw = function redraw(time) {
     updatePosition();
 
-    ctx.clearRect(0, 0, 750, 580);
+    ctx.clearRect(0, 0, 1000, 580);
 
     var keys = Object.keys(characters);
 
@@ -94,10 +94,6 @@ var keyDownHandler = function keyDownHandler(e) {
     } else if (keyPressed === 39 && !character.kicked) {
         character.moveRight = true;
     }
-
-    if (keyPressed === 32 && !character.kicked) {
-        character.jump = true;
-    }
 };
 
 var keyUpHandler = function keyUpHandler(e) {
@@ -111,12 +107,16 @@ var keyUpHandler = function keyUpHandler(e) {
     }
 
     if (keyPressed === 32 && !character.kicked) {
-        character.jump = false;
+        character.jump = true;
     }
 
     if (keyPressed === 88 && !character.kicked) {
         sendKick();
     }
+};
+
+var isWorking = function isWorking(data) {
+    console.log(data);
 };
 
 var init = function init() {
@@ -133,6 +133,7 @@ var init = function init() {
     socket.on('kickHit', playerDeath);
     socket.on('updateKick', receiveKick);
     socket.on('left', removeUser);
+    socket.on('fuck', isWorking);
 
     document.body.addEventListener('keydown', keyDownHandler);
     document.body.addEventListener('keyup', keyUpHandler);
@@ -176,6 +177,7 @@ var removeUser = function removeUser(data) {
 var setUser = function setUser(data) {
     hash = data.hash;
     characters[hash] = data;
+    console.log(characters[hash].hash + " has connected to " + characters[hash].room);
     requestAnimationFrame(redraw);
 };
 
@@ -219,11 +221,12 @@ var updatePosition = function updatePosition() {
     if (character.moveRight && character.destX < canvas.width) {
         character.destX += 3;
     }
-    if (character.jump && character.destY > 0 && character.y === 580 - character.height) {
-        character.destY -= 20;
+    if (character.jump && character.destY > 0 && character.destY >= 580 - character.height) {
+        character.destY -= 200;
+        character.jump = false;
     }
     if (character.destY < 580 - character.height) {
-        character.destY += 2;
+        character.destY += 5;
     }
 
     if (character.moveLeft) {
