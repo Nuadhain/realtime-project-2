@@ -1,0 +1,26 @@
+JASON NOONE
+Project 2
+
+Shinkicker Multiplayer is a multiplayer game where players compete to kick eachother's shins to come out on top
+as the one who hasn't been kicked in the shins. It's based on a game I developed independently as a 2D platformer
+changing the previous focus from the platforming to more of a hectic brawl between a multitude of players trying
+to scramble around and kick eachother in the shins.
+
+The websockets are used to create a game that tests collisions and handles all the player movements and interactions
+on the server's side.
+
+As for what went right and what went wrong, for the most part the game seems to run smoothly (and it actually works
+this time, fingers crossed) and the movement and kicking is as intended. However I would have liked to introduce
+a system to manage rooms. For example, when you start off you are on a screen that lets you put in the name of
+the room you wish to join and the server connects to that room. I also would have liked to have platforms in the
+game for the players to jump on to add that extra element of movement to the game. And overall I wish I could
+have spent more time polishing the game in general.
+
+As I mentioned before, if I were to continue I would add a room system to the game allowing players to create
+and connect to specific rooms, and I would also add those platforms to change the dynamic of the game just
+a bit.
+
+Personally, I believe that for the above and beyond I created an experience that shines in its simplicity.
+The simple art and animations have a charm to them and boil down the visuals making them relatively easy
+to follow. It's not bogged down by excessive detail and instead tries to create an experience that is
+simple but inherently enjoyable (or at least I hope it is).

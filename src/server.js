@@ -1,3 +1,6 @@
+// Using structure from the Websockets Server Physics Threading in class example
+
+
 const http = require('http');
 const path = require('path');
 const express = require('express');
@@ -6,6 +9,7 @@ const sockets = require('./sockets.js');
 
 const PORT = process.env.PORT || process.env.NODE_PORT || 3000;
 
+// Using express library
 const app = express();
 app.use('/assets', express.static(path.resolve(`${__dirname}/../hosted/`)));
 

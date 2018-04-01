@@ -9,9 +9,10 @@ class Character {
     this.destX = 0;
     this.destY = 0;
     this.height = 64;
-    this.width = 34;
+    this.width = 45;
     this.alpha = 0;
     this.direction = 0;
+    this.sprite = 0;
     this.frame = 0;
     this.frameCount = 0;
     this.moveLeft = false;
